@@ -17,7 +17,7 @@ public class Get01 {
            -- Test case yazımı için 'Gherkin Language' kullanıyoruz
             'Gherkin' bazı keywordlara sahiptir.
             x)Given: Ön koşul
-            y)When : Yaapacağımız aksiyonlar için==>Get,Put,..
+            y)When : Yapacağımız aksiyonlar için==>Get,Put,..
             z)Then :Çıktılar veya Dönütler için==>Assert,Responce,Doğrulama
             t)And  :Çoklu işlemler için
 
