@@ -1,3 +1,5 @@
+package get_requests;
+
 import io.restassured.response.Response;
 import org.junit.Assert;
 import org.junit.Test;
@@ -23,7 +25,7 @@ public class Get02 {
         And
             Response body does not contain "TechProEd"
         And
-            Server is "Cowboy"
+            Server is "Cowboy"   // (Headr ın içinde server vardır)
      */
 
     @Test
@@ -46,7 +48,7 @@ public class Get02 {
         Assert.assertTrue(responce.asString().contains("Not Found"));
 
 
-        // Response body'de bulunan spesifik bir veri nasıl assert edilir.
+        // Response body'de bulunan spesifik bir veri bulunmadığı nasıl assert edilir.
         // assertFalse() methodu parantezin içindeki değer true is tesi geçirir.
 
         assertFalse(responce.asString().contains("TechProEd"));
