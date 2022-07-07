@@ -27,7 +27,8 @@ public class Get05 extends HerokuAppBaseUrl {
         //1. Step: Set the Url
 
         //https://restful-booker.herokuapp.com/booking?firtsname=Aaron&lastname=Chen
-        spec.pathParam("first","booking").queryParams("firstname","Aaron","lastname","Chen");
+        spec.pathParam("first","booking").
+                queryParams("firstname","Aaron","lastname","Chen");
 
         //2.Step:  set the expected data
 

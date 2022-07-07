@@ -37,7 +37,7 @@ public class Get04 extends JsonplaceholderBaseUrl {
 
         // 2.step: set the expected data
 
-        // 3.step: set the request and get response
+        // 3.step: send the request and get response
 
         Response response=given().spec(spec).accept(ContentType.JSON).when().get("/{first}");
         response.prettyPrint();
@@ -49,6 +49,6 @@ public class Get04 extends JsonplaceholderBaseUrl {
                 statusCode(200).
                 contentType(ContentType.JSON).
                 body("id",hasSize(200),"title",hasItem("quis eius est sint explicabo"),"userId",hasItems(2,7,9));
-
+                                                        // hasItem==>Buna sahip mi manasına geliyor
     }
 }
