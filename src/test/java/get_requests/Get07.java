@@ -9,6 +9,7 @@ import java.util.List;
 
 import static io.restassured.RestAssured.*;
 import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertTrue;
 
 public class Get07 extends JsonplaceholderBaseUrl {
 
@@ -60,5 +61,8 @@ public class Get07 extends JsonplaceholderBaseUrl {
 
         List<String> titles = json.getList("findAll{it.id<5}.title");
         System.out.println(titles);
+
+        //Assert that "delectus aut autem" is one of the titles whose id is less than 5
+        assertTrue(titles.contains("delectus aut autem"));
     }
 }

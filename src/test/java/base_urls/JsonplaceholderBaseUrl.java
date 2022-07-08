@@ -12,6 +12,11 @@ public class JsonplaceholderBaseUrl {
     // fakat aynı zamanda bu ulaşacağımız verinin değiştirilebilir olmaması gerekiyor (spec'in)
 
 
+    //=================================================================================
+    // RequestSpecification bir interface olduğundan bunun constructor yoktur.
+    // Bunun için  restassured kutuphanesinin bize sağladığı RequestSpecBuilder() constructorı kullanarak spec 'e atama
+    // yapabiliriz.
+
     // Before annotation'ı
     @Before
     public void setUp(){
