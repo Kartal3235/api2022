@@ -47,6 +47,8 @@ public class Patch01 extends JsonplaceholderBaseUrl {
         response.prettyPrint();
 
         //4)Do Assertion
+        response.then().assertThat().statusCode(200).body("title",equalTo(requestBodyMap.get("title")));
+
         Map<String, Object>mapToAssert=requestBody.expectedDataWithAllKeys(10,"Wash the dishes",true);
         response.then().assertThat().statusCode(200).body("title",equalTo(mapToAssert.get("title")),
                 "userId",equalTo(mapToAssert.get("userId")),"completed",equalTo(mapToAssert.get("completed")));
