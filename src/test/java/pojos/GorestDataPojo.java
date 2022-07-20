@@ -7,7 +7,7 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 public class GorestDataPojo {
 
     //1. Tum keyler privite variable'lar oluturuyoruz
-    private String id;
+    private Integer id;
     private String name;
     private String email;
     private String gender;
@@ -18,7 +18,7 @@ public class GorestDataPojo {
     public GorestDataPojo() {
     }
 
-    public GorestDataPojo(String id, String name, String email, String gender, String status) {
+    public GorestDataPojo(Integer id, String name, String email, String gender, String status) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -28,11 +28,11 @@ public class GorestDataPojo {
     //3. Getter ve Setters'larımızı olusturuoyurz
 
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

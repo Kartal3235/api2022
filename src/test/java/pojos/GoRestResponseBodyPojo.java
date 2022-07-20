@@ -4,7 +4,7 @@ package pojos;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class GoRestPojo {
+public class GoRestResponseBodyPojo {
 
     //1. Tum keyler privite variable'lar oluturuyoruz
     private Object meta;
@@ -12,10 +12,10 @@ public class GoRestPojo {
 
     //2. Tüm parametrelerle ve paramatresiz constructor olusturuyoruz
 
-    public GoRestPojo() {
+    public GoRestResponseBodyPojo() {
     }
 
-    public GoRestPojo(Object meta, GorestDataPojo data) {
+    public GoRestResponseBodyPojo(Object meta, GorestDataPojo data) {
         this.meta = meta;
         this.data = data;
     }
