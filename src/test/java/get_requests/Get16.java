@@ -27,6 +27,25 @@ public class Get16 extends DummyRestApiBaseUrl {
                    vi) Total salary of all employees is 6,644,770
     */
 
+    /*
+        Given
+            https://dummy.restapiexample.com/api/v1/employees
+        When
+            User Send get Request to Url
+        Then
+            status code is 200
+        And
+           There are 24 employees
+        And
+           "Tiger Nixon" and "Garrett Winters" are among the employees
+       And
+          The greatest age is 66
+       And
+         The name of the lowest age is "Tatyana Fitzpatrick"
+       And
+         Total salary of all employees is 6,644,770
+     */
+
     @Test
     public void get01() {
         //1.Step: Set the Url
@@ -52,6 +71,7 @@ public class Get16 extends DummyRestApiBaseUrl {
         System.out.println(ageList);
         Collections.sort(ageList);
         System.out.println(ageList);
+        ageList.get(ageList.size()-1);
 
         //v)The name of the lowest age is "Tatyana Fitzpatrick"
 
@@ -66,7 +86,22 @@ public class Get16 extends DummyRestApiBaseUrl {
         //vi) Total salary of all employees is 6,644,770
        List<Integer>salaryList= response.jsonPath().getList("data.findAll{it.id>0}.employee_salary");
         System.out.println(salaryList);
-        System.out.println(salaryList.stream().reduce(0, Integer::sum));
-        assertEquals("6,644,770",salaryList.stream().reduce(0,Integer::sum));
+       // System.out.println(salaryList.stream().reduce(0, Integer::sum));
+                                                          //Math::addExact;
+        int sum=salaryList.stream().reduce(0,(t,u)->t+u);
+
+       assertEquals("6644770",sum);
+        soft.assertAll();
+
+        ////vi) Total salary of all employees is 6,644,770
+        //        List<Integer> salaryList = json.getList("data.findAll{it.id}.employee_salary");
+        //        System.out.println(salaryList);
+        //        //1. Yol:
+        //        int sum =0;
+        //        for(int w:salaryList){
+        //            sum+=w;
+        //        }
+        //        System.out.println(sum);
+        //        assertEquals(6644770, sum);
     }
 }

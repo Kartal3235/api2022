@@ -4,6 +4,7 @@ import base_urls.JsonplaceholderBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
 import pojos.JsonPlaceHolderPojo;
+import test_data.JsonPlaceHolderTestData;
 import utils.JsonUtil;
 
 import java.util.HashMap;
@@ -37,13 +38,8 @@ public class Get14ObjectMapper extends JsonplaceholderBaseUrl {
         //2.Step: Set the expected data
 
         //JsonUtil classımızda, methodumuz(convert()) static olduğu için obje oluşturmaya gerek kalmadan çağırabiliyoruz
-
-        String expectedData="{\n" +
-                "\t\t\t\t\t\t\t\t\t    \"userId\": 10,\n" +
-                "\t\t\t\t\t\t\t\t\t    \"id\": 198,\n" +
-                "\t\t\t\t\t\t\t\t\t    \"title\": \"quis eius est sint explicabo\",\n" +
-                "\t\t\t\t\t\t\t\t\t    \"completed\": true\n" +
-                "\t\t\t\t\t\t\t\t\t  }";
+        JsonPlaceHolderTestData json = new JsonPlaceHolderTestData();
+        String expectedData=json.expectedDataInString(10,"quis eius est sint explicabo",true);
 
         JsonUtil.convertJsonToJavaObject(expectedData, HashMap.class);// Bu kısım bize bir MAP veriyor
                                                       //Hashmap kısmı  istediğimiz data formatına çeviriyor
