@@ -52,11 +52,15 @@ public class Get13Pojo extends GoRestBaseUrl {
          /*
          Assertion yapabilmemiz için; response'mızı assert yapacağımız karşılaştıracağımız datayı
          aynı dataformatında yapmamız lazım
+         Response mızı Pojo classı ile karşılaştırmamız için,
          Yani;
          response.as(GoRestResponseBodyPojo.class)==>De serialization
           */
 
         GoRestResponseBodyPojo actualDataPojo=response.as(GoRestResponseBodyPojo.class);
+
+        // as()==>   ile pom.xml de dependcy gson çalışıyor
+
         System.out.println(actualDataPojo);
 
         assertEquals(goRestPojo.getMeta(),actualDataPojo.getMeta());
