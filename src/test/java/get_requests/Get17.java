@@ -65,10 +65,10 @@ public class Get17 extends DummyRestApiBaseUrl {
        assertEquals(responseBodyPojo.getStatus(),responseBody.getStatus());
        assertEquals(responseBodyPojo.getMessage(),responseBody.getMessage());
        assertEquals(responseBodyPojo.getData().getId(),responseBody.getData().getId());
-       assertEquals(responseBodyPojo.getData().getEmployeeName(),responseBody.getData().getEmployeeName());
-      // assertEquals(responseBodyPojo.getData().getEmployeeSalary(),responseBody.getData().getEmployeeSalary());
-      // assertEquals(responseBodyPojo.getData().getEmployeeAge(),responseBody.getData().getEmployeeAge());
-      // assertEquals(responseBodyPojo.getData().getProfileImage(),responseBody.getData().getProfileImage());
+       assertEquals(responseBodyPojo.getData().getEmployee_name(),responseBody.getData().getEmployee_name());
+       assertEquals(responseBodyPojo.getData().getEmployee_salary(),responseBody.getData().getEmployee_salary());
+      assertEquals(responseBodyPojo.getData().getEmployee_age(),responseBody.getData().getEmployee_age());
+      assertEquals(responseBodyPojo.getData().getProfile_image(),responseBody.getData().getProfile_image());
 
     }
 }
