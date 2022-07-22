@@ -5,7 +5,7 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Data {
 
-    private Integer id;
+
     private String employee_name;
     private Integer employee_salary;
     private Integer employee_age;
@@ -14,21 +14,15 @@ public class Data {
     public Data() {
     }
 
-    public Data(Integer id, String employee_name, Integer employee_salary, Integer employee_age, String profile_image) {
-        this.id = id;
+    public Data( String employee_name, Integer employee_salary, Integer employee_age, String profile_image) {
+
         this.employee_name = employee_name;
         this.employee_salary = employee_salary;
         this.employee_age = employee_age;
         this.profile_image = profile_image;
     }
 
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getEmployee_name() {
         return employee_name;
@@ -65,7 +59,7 @@ public class Data {
     @Override
     public String toString() {
         return "Data{" +
-                "id=" + id +
+
                 ", employee_name='" + employee_name + '\'' +
                 ", employee_salary=" + employee_salary +
                 ", employee_age=" + employee_age +

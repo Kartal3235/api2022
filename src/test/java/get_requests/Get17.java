@@ -50,7 +50,7 @@ public class Get17 extends DummyRestApiBaseUrl {
         spec.pathParams("pp1","employee","pp2",1);
 
         //2.Step: Set the expected data
-        Data dataPojo=new Data(1,"Tiger Nixon",320800,61,"");
+        Data dataPojo=new Data("Tiger Nixon",320800,61,"");
         ResponseBody responseBodyPojo=new ResponseBody("success",dataPojo,"Successfully! Record has been fetched.");
 
         Response response=given().spec(spec).when().get("{pp1}/{pp2}");
@@ -64,7 +64,7 @@ public class Get17 extends DummyRestApiBaseUrl {
 
        assertEquals(responseBodyPojo.getStatus(),responseBody.getStatus());
        assertEquals(responseBodyPojo.getMessage(),responseBody.getMessage());
-       assertEquals(responseBodyPojo.getData().getId(),responseBody.getData().getId());
+
        assertEquals(responseBodyPojo.getData().getEmployee_name(),responseBody.getData().getEmployee_name());
        assertEquals(responseBodyPojo.getData().getEmployee_salary(),responseBody.getData().getEmployee_salary());
       assertEquals(responseBodyPojo.getData().getEmployee_age(),responseBody.getData().getEmployee_age());
